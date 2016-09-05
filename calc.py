@@ -31,11 +31,11 @@ while 1:
 
     ops = ('Addition', 'Soustraction', 'Multiplication', 'Division')
 
-    print '\r\n[1]: {}'.format(ops[0])
-    print '[2]: {}'.format(ops[1])
-    print '[3]: {}'.format(ops[2])
-    print '[4]: {}'.format(ops[3])
-    print '[q]: Sortir'
+    print('\r\n[1]: {}'.format(ops[0]))
+    print('[2]: {}'.format(ops[1]))
+    print('[3]: {}'.format(ops[2]))
+    print('[4]: {}'.format(ops[3]))
+    print('\r\n[q]: Sortir')
 
     op = str(input('\r\nChoisissez une opération: '))
 
@@ -44,20 +44,16 @@ while 1:
         print("Bye bye !!")
         break
 
-    elif int(op) < 1:
-        print '\r\nSaisi opération incorrect. Veuillez réessayer.'
-        continue
-
-    elif int(op) > 4:
-        print '\r\nSaisi opération incorrect. Veuillez réessayer.'
+    elif int(op) < 1 or int(op) > 4:
+        print('\r\nSaisi opération incorrect. Veuillez réessayer.')
         continue
 
     else:
         """Affichage du choix de calcul"""
-        print '\r\nVous avez choisi une {}'.format(ops[int(op) - 1])
+        print('\r\n--- Vous avez choisi une {} ---'.format(ops[int(op) - 1]))
 
         """Choix des 2 chiffres"""
         a = int(input('\r\nChoix du 1er chiffre: '))
         b = int(input('\r\nChoix du 2ème chiffre: '))
 
-    print('\r\nLe résultat est {}'.format(str(calculate(a, b, op))))
+    print('\r\n--- Le résultat est {} ---'.format(str(calculate(a, b, op))))
