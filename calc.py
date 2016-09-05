@@ -6,23 +6,58 @@
 #@date 05092016
 ###################
 
-print '1: Addition'
-print '2: Soustraction'
-print '3: Multiplication'
-print '4: Division'
-print 'q: Sortir'
+##      FONCTIONS       ##
+
+def calculate(a, b, op):
+
+    """Exécution du calcul"""
+
+    if op == '1':
+        return a + b
+
+    elif op == '2':
+        return a - b
+
+    elif op == '3':
+        return a * b
+
+    elif op == '4':
+        return a / b
+
+
+##      Affichage console       ##
 
 while 1:
-    op = input('Choisissez une opération: ')
-    if op == 'q':
-        print("Fin de la boucle")
+
+    ops = ('Addition', 'Soustraction', 'Multiplication', 'Division')
+
+    print '\r\n[1]: {}'.format(ops[0])
+    print '[2]: {}'.format(ops[1])
+    print '[3]: {}'.format(ops[2])
+    print '[4]: {}'.format(ops[3])
+    print '[q]: Sortir'
+
+    op = str(input('\r\nChoisissez une opération: '))
+
+    """Fin du programme"""
+    if op.lower() == 'q':
+        print("Bye bye !!")
         break
 
-op = input('Choisissez une opération: ')
-a = 1
-b = 2
-print op
+    elif int(op) < 1:
+        print '\r\nSaisi opération incorrect. Veuillez réessayer.'
+        continue
 
-if op == '1':
-    print 'bibi'
-    print a + b
+    elif int(op) > 4:
+        print '\r\nSaisi opération incorrect. Veuillez réessayer.'
+        continue
+
+    else:
+        """Affichage du choix de calcul"""
+        print '\r\nVous avez choisi une {}'.format(ops[int(op) - 1])
+
+        """Choix des 2 chiffres"""
+        a = int(input('\r\nChoix du 1er chiffre: '))
+        b = int(input('\r\nChoix du 2ème chiffre: '))
+
+    print('\r\nLe résultat est {}'.format(str(calculate(a, b, op))))
