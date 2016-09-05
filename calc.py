@@ -27,24 +27,20 @@ def calculate(a, b, op):
 
 ##      Affichage console       ##
 
-while 1:
 
-    ops = ('Addition', 'Soustraction', 'Multiplication', 'Division')
+ops = ('Addition', 'Soustraction', 'Multiplication', 'Division')
 
-    print('\r\n[1]: {}'.format(ops[0]))
-    print('[2]: {}'.format(ops[1]))
-    print('[3]: {}'.format(ops[2]))
-    print('[4]: {}'.format(ops[3]))
-    print('\r\n[q]: Sortir')
+print('\r\n[1]: {}'.format(ops[0]))
+print('[2]: {}'.format(ops[1]))
+print('[3]: {}'.format(ops[2]))
+print('[4]: {}'.format(ops[3]))
+print('\r\n[q]: Sortir')
 
-    op = str(input('\r\nChoisissez une opération: '))
+op = str(input('\r\nChoisissez une opération: '))
 
-    """Fin du programme"""
-    if op.lower() == 'q':
-        print("Bye bye !!")
-        break
+while op.lower() != 'q':
 
-    elif int(op) < 1 or int(op) > 4:
+    if int(op) < 1 or int(op) > 4:
         print('\r\nSaisi opération incorrect. Veuillez réessayer.')
         continue
 
@@ -57,3 +53,5 @@ while 1:
         b = int(input('\r\nChoix du 2ème chiffre: '))
 
     print('\r\n--- Le résultat est {} ---'.format(str(calculate(a, b, op))))
+
+print("Bye bye !!")
