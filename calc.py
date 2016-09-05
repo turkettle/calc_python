@@ -1,17 +1,28 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 ###################
 #@Python - Calculatrice
 #@Gaetan
 #@date 05092016
 ###################
 
-print 'Bienvenu dans la calculatrice interactive python'
+print '1: Addition'
+print '2: Soustraction'
+print '3: Multiplication'
+print '4: Division'
+print 'q: Sortir'
 
-int1 = int(input("Premier nombre: "))
-op = input("Opérateur: ")
-int1 = int(input("Deuxième nombre: "))
+while 1:
+    op = input('Choisissez une opération: ')
+    if op == 'q':
+        print("Fin de la boucle")
+        break
 
-ops = {'+': '+', 'x': '*', '-': '-', '/': '/'}
+op = input('Choisissez une opération: ')
+a = 1
+b = 2
+print op
 
-if op in pos
-    print 'Fine'
+if op == '1':
+    print 'bibi'
+    print a + b
