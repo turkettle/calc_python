@@ -39,6 +39,7 @@ def exec_application(op):
 
     while op.lower() != 'q':
 
+        """Si la saisie est une lettre autre que q"""
         try:
             op = int(op)
         except ValueError:
@@ -46,13 +47,12 @@ def exec_application(op):
             op = str(launch_prompt())
             continue
 
-
+        """Si la saisie est un chiffre ne correspondant à aucune opération"""
         if int(op) < 1 or int(op) > 4:
             print('\r\n--- Saisi opération incorrect. Veuillez réessayer ---')
             op = str(launch_prompt())
             continue
 
-        # else:
         """Affichage du choix de calcul"""
         print('\r\n--- Vous avez choisi une {} ---'.format(ops[int(op) - 1]))
 
@@ -60,9 +60,14 @@ def exec_application(op):
         a = int(input('\r\nChoix du 1er chiffre: '))
         b = int(input('\r\nChoix du 2ème chiffre: '))
 
+        """Affichage du resultat"""
         print('\r\n--- Le résultat est {} ---'.format(str(calculate(a, b, op))))
+
+        """Réinitialisation du programme"""
+        """Si on omet cette étape, on récupère une erreur de typage de variable"""
         op = str(launch_prompt())
 
+    """Si l'utilisateur à saisi la lettre 'q', on sort"""
     print("Bye bye !!")
 
 
